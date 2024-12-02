@@ -233,12 +233,12 @@ def compile_player_data(data_dir):
             meta_path = os.path.join(match_path, 'meta.json')
             players_path = os.path.join(match_path, 'players.json')
             telemetry_path = os.path.join(match_path, 'telemetry.json')
-            roster_path = os.path.join(match_path, 'rosters.json')  # roster.json 경로 추가
+            roster_path = os.path.join(match_path, 'rosters.json')  
 
             meta_data = load_json(meta_path)
             players_data = load_json(players_path)
             telemetry_data = load_json(telemetry_path)
-            roster_data = load_json(roster_path)  # roster.json 로드
+            roster_data = load_json(roster_path)
 
             if not meta_data or not players_data or not telemetry_data or not roster_data:
                 print(f"Missing data for match {match_id}.")
