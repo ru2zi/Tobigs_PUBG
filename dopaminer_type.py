@@ -65,7 +65,7 @@ def calculate_boundary(model, X, y, method_name):
 # HDBSCAN 결과를 사용하여 Logistic Regression 및 SVM 적용
 print("=== HDBSCAN 기반 경계 도출 ===")
 hdbscan_labels = df['hdbscan_cluster']
-if len(np.unique(dbscan_labels)) > 1:  # 두 개 이상의 클러스터가 있는 경우에만 경계 도출
+if len(np.unique(hdbscan_labels)) > 1:  # 두 개 이상의 클러스터가 있는 경우에만 경계 도출
     calculate_boundary(LogisticRegression(), X_scaled, hdbscan_labels, "Logistic Regression (HDBSCAN)")
     calculate_boundary(SVC(kernel='linear'), X_scaled, hdbscan_labels, "SVM (HDBSCAN)")
 else:
